@@ -5,39 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dungeon Loot Splitter: add loot, see the running total and split it among the party.">
     <meta name="author" content="Andrew Nguyen">
-    <title>Loot Tracker</title>
+    <title>Dungeon Loot Splitter</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Dungeon Loot Splitter</h1>
+    </header>
+
     <main>
-        <h1>Loot Tracker</h1>
-
-        <form id="lootForm" novalidate>
+        <section class="panel">
+            <h2>Party Setup</h2>
             <div class="field">
-                <label for="lootName">Loot name</label>
-                <input type="text" id="lootName" name="lootName" aria-describedby="message">
+                <label for="partySize">Number of Party Members:</label>
+                <input type="number" id="partySize" min="1" step="1">
             </div>
-
-            <div class="field">
-                <label for="lootValue">Loot Value</label>
-                <input type="number" id="lootValue" name="lootValue" step="any" aria-describedby="message">
-            </div>
-
-            <button type="submit" id="addLootButton">Add Loot</button>
-        </form>
-
-        <p id="message" class="message" role="alert"></p>
-
-        <section>
-            <h2>Loot Collected</h2>
-            <ul id="lootList">
-                <li class="empty">No loot added yet.</li>
-            </ul>
         </section>
 
-        <section>
-            <h2>Total</h2>
-            <p class="total">Total Loot Value: <span id="totalDisplay">0</span></p>
+        <section class="panel">
+            <h2>Add loot</h2>
+            <form id="lootForm" novalidate>
+                <div class="field">
+                    <label for="lootName">Loot Name:</label>
+                    <input type="text" id="lootName">
+                </div>
+                <div class="field">
+                    <label for="lootValue">Loot Value:</label>
+                    <input type="number" id="lootValue" min="0" step="any">
+                </div>
+                <button type="submit" id="addLootButton">Add Loot</button> 
+            </form>
+            <p id="lootMessage" class="message" role="alert"></p>
+        </section>
+
+        <section class="panel1">
+            <h2>Loot List</h2>
+            <ul id="lootList">
+                <li>No loot added yet.</li>
+            </ul>
+            <p class="total">Total Loot: <span id="totalLoot">$0.00</span></p>
+        </section>
+
+        <section class="panel1">
+            <h2>Slit Loot</h2>
+            <button type="button" id="splitLootButton">Split Loot</button>
+            <p id="splitMessage" class="message" role="alert"></p>
+            <p>Total Loot: <span id="splitTotal">$0.00</span></p>
+            <p>Loot Per Party Member: <span id="perMember">$0.00</span></p>
+        </section>
+
+        <section class="panel reflection">
+            <h2>Logic Explanation</h2>
+            <p>
+
+            </p>
         </section>
     </main>
 
