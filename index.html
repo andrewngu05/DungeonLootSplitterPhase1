@@ -57,7 +57,22 @@
         <section class="panel reflection">
             <h2>Logic Explanation</h2>
             <p>
+                The lot array is declared at the top of the javascript file, and is outside of the functions because 
+                once the button is clicked it'll keep its items when its clicked.
+                And every item that is in the array is considered an object with a name and a value listed as {name: "___", value: ___}.
+                if the object passes all the parameters the object is then pushed into the array at the end.
+            </p>
 
+            <p>
+                2 for loops were used. 1 in the renderLoot() it basically reads the array and lists the items in the array in an order.
+                And the other for loop was used in the calculateTotal(). It starts with a value of 0 and adds the value of the each loot item in the array.
+                Both the total loot in the loot list and split loot calculation comes from this loop to ensure it matches.
+            </p>
+            <p>
+                Finally I used if statements to create conditions for what the users can enter. For example it checks to see that the user has entered a valid name, a valid number, and the number is a positive.
+                If one of the conditions isn't passed the error message pops up on the page to prompt why the loot wasn't added.
+                Another if statement was used during the splitLoot() line to check if the party member size is a whole number and that there is actually loot to split between the members. If it passes all those conditions
+                the total amount is split evenly between each member. And the conditions will only be checked after the user has clicked the split loot button.
             </p>
         </section>
     </main>
